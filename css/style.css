@@ -68,6 +68,19 @@ a:hover{
     background-color: #1B72E8;
 }
 
+/* content table */
+.ms_table-icon{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: grey;
+    border:2px solid grey;
+    /* border: 1px solid red; */
+   
+}
+
 
 
 /* RESPONSIVE */
