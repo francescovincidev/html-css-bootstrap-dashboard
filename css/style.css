@@ -81,6 +81,13 @@ a:hover{
    
 }
 
+/* content graphic */
+.ms_graphic-container a{
+    color: #3E76D3;
+    text-decoration: underline;
+}
+
+
 
 
 /* RESPONSIVE */
