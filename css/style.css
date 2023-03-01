@@ -1,8 +1,48 @@
+:root{
+    --nav-height:58px;
+    --side-bar-width:50px;
+}
+
 .wrapper{
-    height: 100vw;
+    height: 100vh;
+    width: 100%;
 }
 img{
     max-width: 100%;
 }
 
+nav{
+    height: var(--nav-height);
+}
+
+.ms_container{
+    height: calc(100vh - var(--nav-height));
+
+}
+
+
+/* sidebar */
+.ms_side-nav{
+    width: var(--side-bar-width);
+    height: 100%;
+    background-image: url(../img/sidebar-bg.png);
+    background-color: #051E34;
+}
+
+
+.ms_side-nav i{
+    width: 20px;
+}
+
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 992px) {
+    :root{
+    --side-bar-width:150px;
+}
+
+
+
+}
 
