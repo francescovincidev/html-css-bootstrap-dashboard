@@ -42,7 +42,18 @@
                     <i class="fa-solid fa-list d-none d-lg-block px-2"></i>
                     <i class="fa-solid fa-circle-question d-none d-lg-block px-2"></i>
                     <i class="fa-solid fa-ellipsis-vertical d-none d-lg-block px-2"></i>
-                    <i class="fa-solid fa-bell text-warning px-2"></i>
+                    <div class="dropdown">
+
+                        <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            <i class="fa-solid fa-bell text-warning px-2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profilo</a></li>
+                            <li><a class="dropdown-item" href="#">Fatturazione</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
 
                 </div>
             </nav>
@@ -54,16 +65,16 @@
                 <!-- side bar -->
                 <section class="ms_side-nav overflow-auto">
                     <ul class="fa-ul text-white d-flex flex-column h-100 w-100 py-2 m-0">
-                        <li class="py-2 m-auto ms-lg-4"><a href=""><span class="fa-li position-static"><i
+                        <li class="py-2 m-auto ms-lg-4"><a class="p-1" href=""><span class="fa-li position-static"><i
                                         class="fa-solid fa-house"></i></span><span
                                     class="d-none d-lg-inline-block px-2">Home</span></a></li>
-                        <li class="py-2 m-auto ms-lg-4"><a href=""><span class="fa-li position-static"><i
+                        <li class="py-2 m-auto ms-lg-4"><a class="p-1" href=""><span class="fa-li position-static"><i
                                         class="fa-solid fa-chart-simple"></i></span><span
                                     class="d-none d-lg-inline-block px-2">Stats</span></a></li>
-                        <li class="py-2 m-auto ms-lg-4 flex-grow-1"><a href=""><span class="fa-li position-static"><i
-                                        class="fa-solid fa-signal"></i></span><span
+                        <li class="py-2 m-auto ms-lg-4 flex-grow-1"><a class="p-1" href=""><span
+                                    class="fa-li position-static"><i class="fa-solid fa-signal"></i></span><span
                                     class="d-none d-lg-inline-block px-2">Signals</span></a></li>
-                        <li class="py-2 m-auto ms-lg-4"><a href=""><span class="fa-li position-static"><i
+                        <li class="py-2 m-auto ms-lg-4"><a class="p-1" href=""><span class="fa-li position-static"><i
                                         class="fa-solid fa-gear"></i></span><span
                                     class="d-none d-lg-inline-block px-2">Admin</span></a></li>
                     </ul>
@@ -78,15 +89,199 @@
                             <div class="row py-3 px-2">
                                 <div class="col-12 col-md-4 col-lg-3 order-md-last text-md-center">
                                     <span class="ms_fs-08">Nuovo Studente</span>
-    
-                                    <i class="fa-regular fa-square-plus align-middle fs-4"></i>
+
+                                    <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasFull" aria-controls="offcanvasExample">
+
+                                        <i class="fa-regular fa-square-plus align-middle fs-4 text-white"></i>
+                                    </button>
+
+                                    <button class="btn d-none d-lg-inline-block" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasSmall" aria-controls="offcanvasExample">
+
+                                        <i class="fa-regular fa-square-plus align-middle fs-4 text-white"></i>
+                                    </button>
                                 </div>
+
+
+                                <!-- Nuovo studente offcanvas mobile -->
+
+                                <div class="ms_offcanvas offcanvas offcanvas-end w-100 text-black" tabindex="-1"
+                                    id="offcanvasFull" aria-labelledby="offcanvasExampleLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Inserisci un nuovo
+                                            studente</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body ">
+                                        <form class="row  g-3">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="new-name" class="form-label">Nome</label>
+                                                <input type="text" class="form-control" id="new-name"
+                                                    placeholder="Inserisci Nome">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="new-surname" class="form-label">Cognome</label>
+                                                <input type="text" class="form-control" id="new-surname"
+                                                    placeholder="Inserisci Cognome">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                                    <input type="email" class="form-control" id="inputEmail4">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="inputPassword4" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="inputPassword4">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label">Indirizzo</label>
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                    placeholder="Inserisci Indirizzo">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="inputCity" class="form-label">Città</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">Stato</label>
+                                                <select id="inputState" class="form-select">
+                                                    <option selected>Scegli...</option>
+                                                    <option>Italia</option>
+                                                    <option>Francia</option>
+                                                    <option>Germania</option>
+                                                    <option>Spagna</option>
+                                                    <option>Altro</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputZip" class="form-label">CAP</label>
+                                                <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputGroupFile04" class="form-label">Foto</label>
+                                                <input type="file" class="form-control" id="inputGroupFile04"
+                                                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                    <label class="form-check-label" for="gridCheck">
+                                                        Seleziona per proseguire
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Salva</button>
+                                                <button type="button" class="btn btn-warning">Svuota</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Nuovo studente offcanvas large -->
+
+                                <div class="ms_offcanvas offcanvas offcanvas-end  w-50 text-black" tabindex="-1"
+                                id="offcanvasSmall" aria-labelledby="offcanvasExampleLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Inserisci un nuovo
+                                        studente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body ">
+                                    <form class="row  g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="new-name" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="new-name"
+                                                placeholder="Inserisci Nome">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="new-surname" class="form-label">Cognome</label>
+                                            <input type="text" class="form-control" id="new-surname"
+                                                placeholder="Inserisci Cognome">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputEmail4" class="form-label">Email</label>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">@</span>
+                                                <input type="email" class="form-control" id="inputEmail4">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="inputPassword4" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword4">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress" class="form-label">Indirizzo</label>
+                                            <input type="text" class="form-control" id="inputAddress"
+                                                placeholder="Inserisci Indirizzo">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="inputCity" class="form-label">Città</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputState" class="form-label">Stato</label>
+                                            <select id="inputState" class="form-select">
+                                                <option selected>Scegli...</option>
+                                                <option>Italia</option>
+                                                <option>Francia</option>
+                                                <option>Germania</option>
+                                                <option>Spagna</option>
+                                                <option>Altro</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="inputZip" class="form-label">CAP</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputGroupFile04" class="form-label">Foto</label>
+                                            <input type="file" class="form-control" id="inputGroupFile04"
+                                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    Seleziona per proseguire
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Salva</button>
+                                            <button type="button" class="btn btn-warning">Svuota</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
                                 <div class="col-12 col-md-4 col-lg-6">
                                     <div>
                                         <span class="fs-3">Boolean</span>
                                         <a href="" class="badge rounded-pill fw-normal ms_badge ">Piano blaze</a>
                                     </div>
-    
+
                                     <div>
                                         <a href="" class="badge rounded-pill fw-normal ms_badge ">3 apps</a>
                                         <i class="fa-solid fa-angles-right ms_angles-right"></i>
@@ -100,14 +295,14 @@
                                         <a href=""
                                             class="badge rounded-pill fw-normal ms_badge d-none d-lg-inline-block">Boolean
                                             Blog App</a>
-    
-    
+
+
                                     </div>
-    
+
                                 </div>
                                 <div class="col-12 col-md-4 col-lg-3 ">
                                     <div class="ms_fs-08">Studenti Online negli ultimi 30 minuti</div>
-    
+
                                     <div class="fs-5">125</div>
                                 </div>
                             </div>
@@ -116,244 +311,336 @@
                     </div>
 
                     <div class="ms_content_body overflow-auto">
-                        <!-- table -->
-                        <div class="ms_table_container">
-                            <div class="card  m-2">
+                        <div class="container-fluid">
+                            <div class="row">
 
-                                <div class="card-header">Prossime classi</div>
-                                <div class="card-body px-2">
+                                <div class="row col-12 col-lg-8 h-100">
 
-                                    <table class="table  table-hover">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">Nome</td>
-                                                <td scope="col" class="text-center d-none d-md-table-cell">Data inizio
-                                                    </th>
-                                                <td scope="col" class="text-center d-none d-md-table-cell">ROI</td>
-                                                <td scope="col" class="text-center">Stato</td>
-                                                <td scope="col" class="text-center">Azioni</td>
+                                    <!-- table -->
+                                    <div class="ms_table_container col-12 ">
+                                        <div class="card  m-2">
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 75</td>
-                                                <td class="text-center d-none d-md-table-cell">15 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-success fw-normal align-text-bottom">Done
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 76</td>
-                                                <td class="text-center d-none d-md-table-cell">16 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-success fw-normal align-text-bottom">Done
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 77</td>
-                                                <td class="text-center d-none d-md-table-cell">17 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div
-                                                        class="badge text-bg-warning fw-normal align-text-bottom text-white">
-                                                        Process
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 78</td>
-                                                <td class="text-center d-none d-md-table-cell">18 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-success fw-normal align-text-bottom">Done
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 79</td>
-                                                <td class="text-center d-none d-md-table-cell">19 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-danger fw-normal align-text-bottom">Failed
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 80</td>
-                                                <td class="text-center d-none d-md-table-cell">20 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-success fw-normal align-text-bottom">Done
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 81</td>
-                                                <td class="text-center d-none d-md-table-cell">21 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-danger fw-normal align-text-bottom">Failed
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><img class="align-text-top" src="img/class-avatar.jpg"
-                                                        alt="" width="20"> Classe 82</td>
-                                                <td class="text-center d-none d-md-table-cell">22 Feb 2021</td>
-                                                <td class="text-center d-none d-md-table-cell">20%</td>
-                                                <td class="text-center">
-                                                    <div class="badge text-bg-success fw-normal align-text-bottom">Done
-                                                    </div>
-                                                </td>
-                                                <td class="text-center"><span class=""><a href="" class="mx-1"> <i
-                                                                class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
-                                                            href="" class="mx-1"><i
-                                                                class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
-                                                </td>
-                                            </tr>
+                                            <div class="card-header">Prossime classi</div>
+                                            <div class="card-body px-2">
+
+                                                <table class="table  table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <td scope="col">Nome</td>
+                                                            <td scope="col" class="text-center d-none d-md-table-cell">
+                                                                Data
+                                                                inizio
+                                                                </th>
+                                                            <td scope="col" class="text-center d-none d-md-table-cell">
+                                                                ROI</td>
+                                                            <td scope="col" class="text-center">Stato</td>
+                                                            <td scope="col" class="text-center">Azioni</td>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 75</td>
+                                                            <td class="text-center d-none d-md-table-cell">15 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-success fw-normal align-text-bottom">
+                                                                    Done
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 76</td>
+                                                            <td class="text-center d-none d-md-table-cell">16 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-success fw-normal align-text-bottom">
+                                                                    Done
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 77</td>
+                                                            <td class="text-center d-none d-md-table-cell">17 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-warning fw-normal align-text-bottom text-white">
+                                                                    Process
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 78</td>
+                                                            <td class="text-center d-none d-md-table-cell">18 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-success fw-normal align-text-bottom">
+                                                                    Done
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 79</td>
+                                                            <td class="text-center d-none d-md-table-cell">19 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-danger fw-normal align-text-bottom">
+                                                                    Failed
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 80</td>
+                                                            <td class="text-center d-none d-md-table-cell">20 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-success fw-normal align-text-bottom">
+                                                                    Done
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 81</td>
+                                                            <td class="text-center d-none d-md-table-cell">21 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-danger fw-normal align-text-bottom">
+                                                                    Failed
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="row"><img class="align-text-top"
+                                                                    src="img/class-avatar.jpg" alt="" width="20">
+                                                                Classe 82</td>
+                                                            <td class="text-center d-none d-md-table-cell">22 Feb
+                                                                2021</td>
+                                                            <td class="text-center d-none d-md-table-cell">20%</td>
+                                                            <td class="text-center">
+                                                                <div
+                                                                    class="badge text-bg-success fw-normal align-text-bottom">
+                                                                    Done
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center"><span class=""><a href=""
+                                                                        class="mx-1"> <i
+                                                                            class="fa-solid fa-pen ms_table-icon rounded "></i></a></span><span><a
+                                                                        href="" class="mx-1"><i
+                                                                            class="rounded ms_table-icon fa-solid fa-trash"></i></a></span>
+                                                            </td>
+                                                        </tr>
 
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- faq -->
-                        <div class="ms_faq-container">
-                            <div class="card m-2">
-                                <div class="card-header">
-                                    Featured
-                                </div>
-
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Come aggiungere un nuovo studente?
-                                        <span class=""><i class="fa-solid fa-chevron-down"></i></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Come posso accedere alle informazioni del mio account?
-                                        <span class=""><i class="fa-solid fa-chevron-down"></i></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Posso usare questa dashboard da mobile?
-                                        <span class=""><i class="fa-solid fa-chevron-down"></i></span>
-                                    </li>
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                        <!-- to do list -->
-                        <div class="ms_todo-container">
-                            <div class="card m-2">
-
-                                <div class="card-header">
-                                    Todo
-                                </div>
-
-                                <div class="card m-4">
-
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    Kickoff nuove classi
-                                                </label>
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    Lezione su Bootstrap 5 in classe #75
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault">
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    Controllare gli username github studenti
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- graphic -->
-                        <div class="ms_graphic-container">
-                            <div class="card m-2">
-                                <div class="card m-3">
+                                        </div>
+                                    </div>
 
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <img src="img/stats.jpeg" alt="">
-                                            <div class="fs-5 py-2">Utenti attivi</div>
-                                            <div>Lista degli utenti attivi in piattaforma nell'ultimo mese</div>
-                                        </li>
-                                        <li class="list-group-item">Gennaio: 1200</li>
-                                        <li class="list-group-item">Febbraio: 800</li>
-                                        <li class="list-group-item">Marzo: 1500</li>
-                                        <li class="list-group-item"><a href="">Visualizza report approfondito</a></li>
-                                    </ul>
+                                    <!-- faq -->
+                                    <div class="ms_faq-container col-12 ">
+                                        <div class="card m-2">
+                                            <div class="card-header">
+                                                F.A.Q.
+                                            </div>
+
+                                            <div class="accordion px-2" id="accordionExample">
+                                                <div class="">
+                                                    <h2 class="accordion-header border-bottom " id="headingOne">
+                                                        <button class="accordion-button border-1" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                            aria-expanded="true" aria-controls="collapseOne">
+                                                            Come aggiungere un nuovo studente?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body ms_fs-08">
+                                                            Clicca sul + in alto nella selezione blu.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <h2 class="accordion-header border-bottom" id="headingTwo">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                            aria-expanded="false" aria-controls="collapseTwo">
+                                                            Come posso accedere alle informazioni del mio account?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body ms_fs-08">
+                                                            Clicca sull'icona della campanella.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="">
+                                                    <h2 class="accordion-header" id="headingThree">
+                                                        <button class="accordion-button collapsed border-0"
+                                                            type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#collapseThree" aria-expanded="false"
+                                                            aria-controls="collapseThree">
+                                                            Posso usare questa dashboard da mobile?
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingThree"
+                                                        data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body ms_fs-08">
+                                                            Certo, è stata sviluppata con Bootstrap, quindi è responsive
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row col-12 col-lg-4 h-100">
+
+                                    <!-- to do list -->
+                                    <div class="ms_todo-container col-12">
+                                        <div class="card m-2">
+
+                                            <div class="card-header">
+                                                Todo
+                                            </div>
+
+                                            <div class="card m-4">
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Kickoff nuove classi
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Lezione su Bootstrap 5 in classe #75
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Controllare gli username github studenti
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- graphic -->
+                                    <div class="ms_graphic-container col-12 ">
+                                        <div class="card m-2">
+                                            <div class="card m-3">
+
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <img src="img/stats.jpeg" alt="">
+                                                        <div class="fs-5 py-2">Utenti attivi</div>
+                                                        <div>Lista degli utenti attivi in piattaforma nell'ultimo
+                                                            mese</div>
+                                                    </li>
+                                                    <li class="list-group-item">Gennaio: 1200</li>
+                                                    <li class="list-group-item">Febbraio: 800</li>
+                                                    <li class="list-group-item">Marzo: 1500</li>
+                                                    <li class="list-group-item"><a href="">Visualizza report
+                                                            approfondito</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
             </div>
@@ -361,7 +648,9 @@
         </main>
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
